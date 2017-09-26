@@ -18,9 +18,22 @@
             <h3>Ứng dụng đầu tiên với {{xinchao.tieude}} tại ITSOL!</h3>
         </div>
 
-        <div ng-app="">
+        <div ng-app="" ng-init="cacquocgia = [{locale: 'vi-VN', ten: 'Viet Nam'}, {locale: 'en-GB', ten: 'Vuong Quoc Anh'}, {locale: 'fr-FR', ten: 'Cong Hoa Phap'}, {locale: 'en-US', ten: 'Hoa Ky'}]">
             <p>Nhập tên của bạn: <input type="text" ng-model="ten" /></p>
             <p>Xin chào <span ng-bind="ten"></span> !</p>
+            <p>Danh sach cac quoc gia va locale tuong ung:</p>
+            <ol>
+                <li ng-repeat="quocgia in cacquocgia">
+                    {{'Quoc Gia: ' + quocgia.ten + ', Locale: ' + quocgia.locale}}
+                </li>
+            </ol>
+        </div>
+
+        <div ng-app="" ng-init="soluong=5; gia=100000; sinhvien={ho: 'Nguyen The', ten: 'Tuan', mssv: '2017'}; diemthi=[7,6,9,8,7,8,7]">
+            <p>Xin chao sinh vien: {{sinhvien.ho + ' ' + sinhvien.ten}} !</p>
+            <p>MSSV: {{sinhvien.mssv}}</p>
+            <p>Chi phi muon sach: {{soluong*gia}} VND</p>
+            <p>Diem thi (Mon Toan): {{diemthi[4]}}</p>
         </div>
 
         <!-- Thành phần Controller -->
