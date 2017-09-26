@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Angular</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="js/angular.min.js"></script>
+        <script src="js/jquery.min.js"></script>
+    </head>
+
+    <body ng-app="demo"><!-- Trỏ đến ứng dụng Angular -->
+        <h2>Angular</h2>
+        
+        <!-- Thành phần View -->
+        <div ng-controller="excontroller" >
+            <h3>Ứng dụng đầu tiên với {{xinchao.tieude}} tại ITSOL!</h3>
+        </div>
+
+        <!-- Thành phần Controller -->
+        <script>
+            angular.module("demo", [])
+            .controller("excontroller", function($scope) {
+                $scope.xinchao = {};
+                $scope.xinchao.tieude = "Angular";
+            });
+        </script>
+    </body>
+</html>
