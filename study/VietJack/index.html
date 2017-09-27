@@ -42,6 +42,52 @@
             Ban dang nhap: {{sinhvien2.hoten2()}} !
         </div>
 
+        <div ng-controller="nhapcontroller">
+            <table border="1">
+                <tr>
+                    <td>Nhap Ho: </td>
+                    <td><input type="text" ng-model="sinhvien3.ho3" /></td>
+                </tr>
+                <tr>
+                    <td>Nhap Ten: </td>
+                    <td><input type="text" ng-model="sinhvien3.ten3" /></td>
+                </tr>
+                <tr>
+                    <td>Nhap Hoc Phi: </td>
+                    <td><input type="text" ng-model="sinhvien3.hocphi3" /></td>
+                </tr>
+                <tr>
+                    <td>Nhap Ten Mon Hoc: </td>
+                    <td><input type="text" ng-model="tenMonHoc3" /></td>
+                </tr>
+            </table>
+            <br />
+            <table border="1">
+                <tr>
+                    <td>Ten Chu Hoa</td>
+                    <td>{{sinhvien3.hoten3() | uppercase}}</td>
+                </tr>
+                <tr>
+                    <td>Ten Chu Thuong</td>
+                    <td>{{sinhvien3.hoten3() | lowercase}}</td>
+                </tr>
+                <tr>
+                    <td>Hoc Phi</td>
+                    <td>{{sinhvien3.hocphi3 | currency}}</td>
+                </tr>
+                <tr>
+                    <td>Mon Hoc</td>
+                    <td>
+                        <ul>
+                            <li ng-repeat="monhoc in  sinhvien3.tenMonHoc3 | filter: tenMonHoc3 | orderBy: 'diemthi3'">
+                                {{monhoc.ten3 + ', Diem Thi: ' + monhoc.diemthi3}}
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
         <!-- Thành phần Controller -->
         <script>
             var ungdungjs = angular.module("ungdungjs", []);
@@ -62,6 +108,24 @@
                     }
                 };
             });
+
+            ungdungjs.controller('nhapcontroller', function($scope){
+                $scope.sinhvien3 = {
+                    ho3: "Nguyen The ",
+                    ten3: "Tuan",
+                    hocphi3: 200,
+                    tenMonHoc3: [
+                        {ten3: 'Vat Ly', diemthi3: 7.5},
+                        {ten3: 'Toan', diemthi3: 9.0},
+                        {ten3: 'Hoa Hoc', diemthi3: 8.5}
+                    ],
+                    hoten3: function(){
+                        var doituongsv2;
+                        doituongsv2 = $scope.sinhvien3;
+                        return doituongsv2.ho3 + doituongsv2.ten3;
+                    }
+                };
+             });
         </script>
     </body>
 </html>
