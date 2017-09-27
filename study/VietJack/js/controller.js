@@ -62,3 +62,23 @@ ungdungjs.controller('xlform', function($scope){
     }
     $scope.reset5();
 });
+
+ungdungjs.controller('xlinclude', function($scope){
+    $scope.sinhvien6 = {
+        ho6: "Nguyen The ",
+        ten6: "Tuan",
+        hocphi6: 500,
+    tenMonHoc6: [
+        {ten6: 'Toan', diemthi6: 9.0},
+        {ten6: 'Ly', diemthi6: 8.0},
+        {ten6: 'Anh', diemthi6: 7.0},
+        {ten6: 'Hoa', diemthi6: 6.0},
+        {ten6: 'Van', diemthi6: 10.0}
+    ],
+    hoten6: function(){
+        var doituongsv6;
+        doituongsv6 = $scope.sinhvien6;
+        return doituongsv6.ho6 + doituongsv6.ten6;
+    }
+    };
+});
