@@ -82,3 +82,10 @@ ungdungjs.controller('xlinclude', function($scope){
     }
     };
 });
+
+ungdungjs.controller('xlajax', function($scope, $http){
+    var url="dulieuSV.txt";
+    $http.get(url).success(function (response){
+        $scope.sinhvienk56 = response;
+    });
+});

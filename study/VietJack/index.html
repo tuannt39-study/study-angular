@@ -173,10 +173,26 @@
 
         <br />
         
-        <div ng-controller="xlinclude">
+        <!-- <div ng-controller="xlinclude">
             <div ng-include="'tieude.html'"></div>
             <div ng-include="'tenMonHoc.html'"></div>
+        </div> -->
+
+        <div ng-controller="xlajax">
+            <table>
+                <tr>
+                   <th>Ho va Ten</th>
+                   <th>MSSV</th>
+                   <th>Diem thi</th>
+                </tr>
+                <tr ng-repeat="sinhvien in sinhvienk56">
+                   <td>{{ sinhvien.HovaTen }}</td>
+                   <td>{{ sinhvien.MSSV }}</td>
+                   <td>{{ sinhvien.Diemthi }}</td>
+                </tr>
+             </table>
         </div>
 
+        
     </body>
 </html>
