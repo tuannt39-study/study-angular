@@ -61,7 +61,9 @@
                     <td><input type="text" ng-model="tenMonHoc3" /></td>
                 </tr>
             </table>
+
             <br />
+
             <table border="1">
                 <tr>
                     <td>Ten Chu Hoa</td>
@@ -83,6 +85,40 @@
                                 {{monhoc.ten3 + ', Diem Thi: ' + monhoc.diemthi3}}
                             </li>
                         </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <br />
+
+        <div ng-controller="taobang">
+            <table border="1">
+                <tr>
+                    <td>Nhap Ho</td>
+                    <td><input ng-model="sinhvien4.ho4" /></td>
+                </tr>
+                <tr>
+                    <td>Nhap Ten</td>
+                    <td><input ng-model="sinhvien4.ten4" /></td>
+                </tr>
+                <tr>
+                    <td>Ho va ten</td>
+                    <td>{{sinhvien4.hoten4()}}</td>
+                </tr>
+                <tr>
+                    <td>Mon Hoc</td>
+                    <td>
+                        <table border="1">
+                            <tr>
+                                <th>Ten Mon Hoc</th>
+                                <th>Diem Thi</th>
+                            </tr>
+                            <tr ng-repeat="monhoc in sinhvien4.tenMonHoc4">
+                                <td>{{monhoc.ten4}}</td>
+                                <td>{{monhoc.diemthi4}}</td>
+                            </tr>
+                        </table>
                     </td>
                 </tr>
             </table>
@@ -125,6 +161,26 @@
                         return doituongsv2.ho3 + doituongsv2.ten3;
                     }
                 };
+             });
+
+             ungdungjs.controller('taobang', function($scope){
+                 $scope.sinhvien4 = {
+                     ho4: "Nguyen The ",
+                     ten4: "Tuan",
+                     hocphi4: 500,
+                    tenMonHoc4: [
+                        {ten4: 'Toan', diemthi4: 8.0},
+                        {ten4: 'Ly', diemthi4: 8.0},
+                        {ten4: 'Anh', diemthi4: 8.0},
+                        {ten4: 'Hoa', diemthi4: 8.0},
+                        {ten4: 'Van', diemthi4: 8.0}
+                    ],
+                    hoten4: function(){
+                        var doituongsv4;
+                        doituongsv4 = $scope.sinhvien4;
+                        return doituongsv4.ho4 + doituongsv4.ten4;
+                    }
+                 };
              });
         </script>
     </body>
