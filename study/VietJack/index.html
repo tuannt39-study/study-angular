@@ -125,5 +125,49 @@
                 </tr>
             </table>
         </div>
+
+        <div ng-controller="xlform">
+            <form ten="sinhvienForm" novalidate>
+                <table border="1">
+                    <tr>
+                        <td>Nhap Ho: </td>
+                        <td>
+                            <input type="text" ten="ho" ng-model="Ho5" required />
+                            <span ng-show="sinhvienForm.ho.$drity && sinhvienForm.ho.$invalid">
+                                <span ng-show="sinhvienForm.ho.$error.required">Ho la bat buoc.</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nhap Ten: </td>
+                        <td>
+                            <input type="text" ten="ten" ng-model="Ten5" required />
+                            <span ng-show="sinhvienForm.ten.$drity && sinhvienForm.ten.$invalid">
+                                <span ng-show="sinhvienForm.ten.$error.required">Ten la bat buoc.</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nhap Email: </td>
+                        <td>
+                            <input type="email" ten="email" ng-model="Email5" required />
+                            <span ng-show="sinhvienForm.email.$drity && sinhvienForm.email.$invalid">
+                                <span ng-show="sinhvienForm.ten.$error.required">Email la bat buoc.</span>
+                                <span ng-show="sinhvienForm.ten.$error.email">Email khong hop le.</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button ng-click="reset5()">Reset</button>
+                        </td>
+                        <td>
+                            <button ng-disabled="sinhvienForm.ho$dirty && sinhvienForm.ho.$invalid || sinhvienForm.ten.$drity && sinhvienForm.ten.$invalid || sinhvienForm.email.$drity && sinhvienForm.email.$invalid" ng-click="submit()" >Submit</button>
+                        </td>
+                    </tr>
+                </table>                
+            </form>
+        </div>
+
     </body>
 </html>
