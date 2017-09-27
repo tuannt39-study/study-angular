@@ -124,6 +124,27 @@
             </table>
         </div>
 
+        <br />
+
+        <table border="1">
+            <tr>
+                <td><input type="checkbox" ng-model="vhhnut" />Vo hieu hoa nut</td>
+                <td><button ng-disabled="vhhnut">Nhan vao day!</button></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" ng-model="hiennut" />Hien thi nut</td>
+                <td><button ng-show="hiennut">Nhan vao day!</button></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" ng-model="annut" />An nut</td>
+                <td><button ng-hide="annut">Nhan vao day!</button></td>
+            </tr>
+            <tr>
+                <td><p>Tuong luong click: {{demluongclick}}</p></td>
+                <td><button ng-click="demluongclick=demluongclick+1">Nhan vao day!</button></td>
+            </tr>
+        </table>
+
         <!-- Thành phần Controller -->
         <script>
             var ungdungjs = angular.module("ungdungjs", []);
