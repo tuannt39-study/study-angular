@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="myapp.js"></script>
+</head>
+<body>
+    <h2>AngularJS</h2>
+    <form ng-app="form-example" class="row form-horizontal" novalidate>
+        <div class="control-group">
+         <label class="control-label" for="inputEmail">Email</label>
+         <div class="controls">
+           <input type="email" id="inputEmail" placeholder="Email" ng-model="email" required>
+           <div class="input-help">
+             <h4>Invalid Email</h4>
+           </div>
+         </div>
+        </div>
+       <div class="control-group">
+         <label class="control-label" for="inputPassword">Password</label>
+         <div class="controls">
+           <input ng-model="password" class="immediate-help" password-validate required type="password" id="inputPassword" placeholder="Password">
+           <div class="input-help">
+             <h4>Password must meet the following requirements:</h4>
+             <ul>
+               <li ng-class="pwdHasLetter">At least <strong>one letter</strong></li>
+               <li ng-class="pwdHasNumber">At least <strong>one number</strong></li>
+               <li ng-class="pwdValidLength">At least <strong>8 characters long</strong></li>
+             </ul>
+           </div>
+         </div>
+        </div>
+       <div class="control-group">
+         <div class="controls">
+           <button type="submit" class="btn">Create Account</button>
+           <button class="btn" disabled>Create Account</button>
+         </div>
+        </div>
+    </form>
+</body>
+</html>
