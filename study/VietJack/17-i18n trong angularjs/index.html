@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.6.6/angular-locale_vi-vn.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.6.6/angular-locale_en-us.min.js"></script> -->
+    <script src="myapp.js"></script>
+    <script src="mycontroller.js"></script>
+</head>
+<body ng-app="myapp">
+    <div ng-controller="nvController">
+        <h2>AngularJS</h2>
+        <p>{{luong | currency }}</p>
+        <p>{{ngaytinhluong | date }}</p>
+        <p>{{nhanvienid | number }}</p>
+    </div>
+</body>
+</html>

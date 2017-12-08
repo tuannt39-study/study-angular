@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="udapp.js"></script>
+    <script src="svcontroller.js"></script>
+</head>
+<body ng-app="myapp">
+    <div ng-controller="svController" >
+        <table>
+            <tr>
+                <td>Nhập họ: </td>
+                <td>
+                    <input type="text" ng-model="sinhvien.ho" >
+                </td>
+            </tr>
+            <tr>
+                <td>Nhập tên: </td>
+                <td>
+                    <input type="text" ng-model="sinhvien.ten" >
+                </td>
+            </tr>
+            <tr>
+                <td>Nhập học phí: </td>
+                <td>
+                    <input type="text" ng-model="sinhvien.hocphi" >
+                </td>
+            </tr>
+            <tr>
+                <td>Nhập môn học: </td>
+                <td>
+                    <input type="text" ng-model="tenMonHoc" >
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table>
+            <tr>
+                <td>Tên chữ hoa: </td>
+                <td>{{sinhvien.hoten() | uppercase}}</td>
+            </tr>
+            <tr>
+                <td>Tên chữ thường: </td>
+                <td>{{sinhvien.hoten() | lowercase}}</td>
+            </tr>
+            <tr>
+                <td>Học phí: </td>
+                <td>{{sinhvien.hocphi | currency}}</td>
+            </tr>
+            <tr>
+                <td>Môn học: </td>
+                <td>
+                    <table>
+                        <tr>
+                            <th>Tên</th>
+                            <th>Điểm thi</th>
+                        </tr>
+                        <tr ng-repeat="mh in sinhvien.tenMonHoc | filter: tenMonHoc | orderBy: 'diemthi'">
+                            <td>{{ mh.ten }}</td>
+                            <td>{{ mh.diemthi }}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

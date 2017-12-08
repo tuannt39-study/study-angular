@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+</head>
+<body ng-app="myapp">
+    <div ng-controller="svController" >
+        Nhập họ: <input type="text" ng-model="sinhvien.ho" /> <br />
+        Nhập tên: <input type="text" ng-model="sinhvien.ten" /> <br />
+        <br />
+        Tên người đăng nhập: {{sinhvien.hoten()}}
+    </div>
+
+    <script>
+        var myapp = angular.module('myapp', []);
+        myapp.controller('svController', function($scope){
+            $scope.sinhvien = {
+                ho: 'Nguyễn Thế',
+                ten: 'Tuân',
+                hoten: function(){
+                    var dtsv;
+                    dtsv = $scope.sinhvien;
+                    return dtsv.ho + ' ' + dtsv.ten;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

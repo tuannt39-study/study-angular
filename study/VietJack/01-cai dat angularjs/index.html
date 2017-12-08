@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+</head>
+<body ng-app="ungdungdautien">
+    <div ng-controller="ViduController" >
+        <h2>Chào mừng bạn đến với {{xinchao.tieude}} nhé!</h2>
+    </div>
+    <script>
+        angular.module("ungdungdautien", []).controller("ViduController", function($scope) {
+            $scope.xinchao = {};
+            $scope.xinchao.tieude = "AngularJS";
+        });
+    </script>
+</body>
+</html>

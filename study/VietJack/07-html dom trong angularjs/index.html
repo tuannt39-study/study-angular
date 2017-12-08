@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+</head>
+<body ng-app="">
+    <table>
+        <tr>
+            <td><input type="checkbox" ng-model="vhhnut">Vô hiệu hóa nút</td>
+            <td><button ng-disabled="vhhnut">Nhấn vô đây!</button></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" ng-model="htnut">Hiển thị nút</td>
+            <td><button ng-show="htnut">Nhấn vô đây!</button></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" ng-model="anut">Ẩn nút</td>
+            <td><button ng-hide="anut">Nhấn vô đây!</button></td>
+        </tr>
+        <tr>
+            <td><p>Tổng lượng click: {{ dlclick }}</p></td>
+            <td><button ng-click="dlclick = dlclick + 1">Nhấn vô đây!</button></td>
+        </tr>
+    </table>
+</body>
+</html>

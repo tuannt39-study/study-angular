@@ -1,0 +1,35 @@
+<table>
+    <tr>
+        <td>Tên chữ hoa: </td>
+        <td>{{sinhvien.hoten() | uppercase}}</td>
+    </tr>
+    <tr>
+        <td>Tên chữ thường: </td>
+        <td>{{sinhvien.hoten() | lowercase}}</td>
+    </tr>
+    <tr>
+        <td>Học phí: </td>
+        <td>{{sinhvien.hocphi | currency}}</td>
+    </tr>
+    <tr>
+        <td>Nhập môn học: </td>
+        <td>
+            <input type="text" ng-model="tenMonHoc" >
+        </td>
+    </tr>
+    <tr>
+        <td>Môn học: </td>
+        <td>
+            <table>
+                <tr>
+                    <th>Tên</th>
+                    <th>Điểm thi</th>
+                </tr>
+                <tr ng-repeat="mh in sinhvien.tenMonHoc | filter: tenMonHoc | orderBy: 'diemthi'">
+                    <td>{{ mh.ten }}</td>
+                    <td>{{ mh.diemthi }}</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

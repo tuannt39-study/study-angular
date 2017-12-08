@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+</head>
+<body ng-app="" ng-init="cacquocgia = [{locale:'en-VN',ten:'CH XHCN Viet Nam'}, {locale:'en-GB',ten:'Vuong Quoc Anh'}, {locale:'en-FR',ten:'Cong Hoa Phap'}]">
+    <p>Nhập tên của bạn: <input type="text" ng-model="ten"></p>
+    <p>Xin chào <span ng-bind="ten"></span> nhé!</p>
+    <p>Danh sách các quốc gia và locale tương ứng:</p>
+    <ol>
+        <li ng-repeat="quocgia in cacquocgia">
+            {{'Quốc gia: ' + quocgia.ten + ' --- Locale: ' + quocgia.locale}}
+        </li>
+    </ol>
+</body>
+</html>

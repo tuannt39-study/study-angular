@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+</head>
+<body ng-app="" ng-init="soluong=2; gia=40; sinhvien = {ho:'Nguyễn Thế ',ten:'Tuân',mssv:20170678}; diemthi = [8.5,9,7.5,9,6.0]">
+    <p>Xin chào {{sinhvien.ho + " " + sinhvien.ten}}</p>
+    <p>MSSV: {{sinhvien.mssv}}</p>
+    <p>Chi phí mượn sách: {{gia*soluong}}.000 VNĐ</p>
+    <p>Điểm thi Toán: {{diemthi[3]}}</p>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular-route.min.js"></script>
+    <script src="myapp.js"></script>
+    <script src="myController.js"></script>
+</head>
+<body>
+    <h2>AngularJS</h2>
+    <div ng-app="myapp">
+        <p><a href="#themSV">Thêm sinh viên</a></p>
+        <p><a href="#quansatSV">Quan sát sinh viên</a></p>
+        <div ng-view></div>
+        <script type="text/ng-template" id="themSV.html">
+            <h2> Thêm sinh viên </h2>
+            {{message}}
+        </script>
+        <script type="text/ng-template" id="quansatSV.html">
+            <h2> Quan sát sinh viên </h2>	    
+            {{message}}
+        </script>	
+    </div>
+</body>
+</html>
