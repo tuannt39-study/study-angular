@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "roleName": "Tài khoản phải có 5 ký tự"
+    },
+    {
+        "id": 2,
+        "roleName": "Tài khoản chưa được sử dụng"
+    },
+    {
+        "id": 3,
+        "roleName": "Tài khoản phải có ý nghĩa"
+    }
+]

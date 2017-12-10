@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular-route.min.js"></script>
+    <script src="app.js"></script>
+    <script src="nameService.js"></script>
+    <script src="indexController.js"></script>
+    <script src="mainController.js"></script>
+    <script src="secondController.js"></script>
+</head>
+<body ng-app="myApp">
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="#/" class="navbar-brand">AngularJS</a>
+                </div>
+                <ul class="nav navbar-nav navbar-left">
+                    <li>
+                        <a href="#/home">Main</a>
+                    </li>
+                    <li>
+                        <a href="#/second">Second</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div ng-view></div>
+    </div>
+</body>
+</html>
+<!-- Phải dùng angularjs v1.5.9 trở xuống -->
+<!-- Phải được mở trên firefox 57 hoặc chạy server mới hiển thị được, dùng Chrome không hiển thị được. -->
